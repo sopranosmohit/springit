@@ -1,5 +1,7 @@
 package com.vega.springit.model;
 
+import java.util.Objects;
+
 public class Vote {
 
     private Long id;
@@ -15,13 +17,36 @@ public class Vote {
         this.id = id;
     }
 
-    public int getVot() {
-        return vot;
+    public int getVote() {
+        return vote;
     }
 
-    public void setVot(int vot) {
-        this.vot = vot;
+    public void setVote(int vot) {
+        this.vote = vot;
     }
 
-    private int vot;
+
+    @Override
+    public String toString() {
+        return "Vote{" +
+                "id=" + id +
+                ", vote=" + vote +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Vote vote1 = (Vote) o;
+        return vote == vote1.vote &&
+                Objects.equals(id, vote1.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, vote);
+    }
+
+    private int vote;
 }

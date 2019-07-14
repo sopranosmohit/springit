@@ -1,5 +1,7 @@
 package com.vega.springit.model;
 
+import java.util.Objects;
+
 public class Link {
 
     private Long id;
@@ -31,5 +33,30 @@ public class Link {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Link{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", url='" + url + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Link link = (Link) o;
+        return Objects.equals(id, link.id) &&
+                Objects.equals(title, link.title) &&
+                Objects.equals(url, link.url);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, url);
     }
 }
