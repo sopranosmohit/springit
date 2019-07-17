@@ -1,5 +1,6 @@
 package com.vega.springit;
 
+import com.vega.springit.domain.Vote;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,6 +15,7 @@ public class SpringitApplication {
 
     @Autowired
     private SpringItProperties properties;
+
 
     public static void main(String[] args) {
         SpringApplication.run(SpringitApplication.class, args);

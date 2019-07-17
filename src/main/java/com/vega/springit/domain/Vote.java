@@ -16,4 +16,9 @@ public class Vote {
     private Long id;
 
     private int vote;
+
+    public void getNot()
+    {
+        getVote();
+    }
 }
